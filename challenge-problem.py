@@ -14,6 +14,7 @@ class DiskStorage:
         if (not path.exists(self.get_directory_path())):
             makedirs(self.storage_directory)
 
+    # Warning: Directory must exist in advance
     def insert_file(self, file_name, content):
         file = open(self.get_directory_path() / file_name, 'w')
         file.write(content)
@@ -21,4 +22,5 @@ class DiskStorage:
         # Todo: Add proper error handling
 
 log_storage = DiskStorage('logs')
+log_storage.create_directory()
 log_storage.insert_file('test.txt', 'Test')
