@@ -10,10 +10,10 @@ class Rectangle:
         self.width = width
         self.height = height
 
-    def area(self):
+    def get_area(self):
         return self.width * self.height
 
-    def print_end_points(self):
+    def print_coordinates(self):
         top_right = self.origin.x + self.width
         bottom_left = self.origin.y + self.height
         print('Starting Point (X)): ' + str(self.origin.x))
@@ -22,12 +22,12 @@ class Rectangle:
         print('End Point Y-Axis (Bottom Left): ' + str(bottom_left))
     
 def build_rectangle():
-    origin_point = Point(50, 100)
-    rectangle = Rectangle(origin_point, 90, 10)
+    rectangle_origin = Point(50, 100)
+    rectangle = Rectangle(rectangle_origin, 90, 10)
 
     return rectangle
 
 rectangle = build_rectangle()
 
-print(rectangle.area())
-rectangle.print_end_points()
+print(rectangle.get_area())
+rectangle.print_coordinates()
